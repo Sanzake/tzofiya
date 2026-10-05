@@ -1,6 +1,7 @@
 import express from "express";
 import helmet from "helmet";
 import apiRouter from "./src/routes/api.js";
+import { errorHandler } from "./src/utils/errorHandler.js";
 
 const PORT = 3001;
 
@@ -10,5 +11,7 @@ app.use(helmet());
 app.use(express.json());
 
 app.use("/api", apiRouter);
+
+app.use(errorHandler)
 
 app.listen(PORT, console.log(`Server listen on port - ${PORT}`));
