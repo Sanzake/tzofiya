@@ -3,11 +3,11 @@ import AlertsMap from '../components/AlertsMap/AlertsMap'
 import useFetchDelete from '../hooks/useFetchDelete'
 import useFetchGet from '../hooks/useFetchGet'
 import type { Alert } from '../types/alertType'
-import "./GetAlertsPage.css"
+import "./MapPage.css"
 
 const url = "http://localhost:3001/api/alerts"
 
-export default function GetAlertsPage() {
+export default function MapPage() {
     const {executeGet, data, error, loading} = useFetchGet<[] | null>(url)
     const {execute} = useFetchDelete(url)
 
@@ -25,7 +25,7 @@ export default function GetAlertsPage() {
     return (
         <div className='alertsPage'>
             {data && <AlertsMap alerts={data} className='map'/>}
-            <ul className='alertsHolder'>
+            <div className='alertsHolder'>
                 {data?.map((i: Alert) => (
                     <div key={i._id} className='alertCard'>
                         <p>Display name - {i.displayName}</p>
@@ -36,7 +36,7 @@ export default function GetAlertsPage() {
                         <button type='button' onClick={() => handleDelete(i._id)}>delete</button>
                     </div>
                 ))}
-            </ul>
+            </div>
         </div>
     )
 }
