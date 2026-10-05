@@ -14,7 +14,6 @@ export default function AlertPage() {
     if (!data) return <>No data</>
     if (error) return <>error</>
     if (loading) return <>Loading...</>
-    console.log(data)
 
 	return (
     <div>
