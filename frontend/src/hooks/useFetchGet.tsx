@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 
 export default function useFetchGet<T>(url: string, headers?: Record<string, string>) {
     const [data, setData] = useState<T | null>(null)
@@ -7,7 +7,8 @@ export default function useFetchGet<T>(url: string, headers?: Record<string, str
 
     const headersKey = headers ? JSON.stringify(headers) : null
 
-    useEffect(() => {
+
+    const executeGet = useCallback(() => {
         if (!url) {
             setData(null)
             setError(null)
@@ -35,5 +36,8 @@ export default function useFetchGet<T>(url: string, headers?: Record<string, str
             setLoading(false)
         })
     }, [url, headersKey])
-    return {data, error, loading}
+
+    useEffect(executeGet, [executeGet])
+
+    return {executeGet, data, error, loading}
 }
