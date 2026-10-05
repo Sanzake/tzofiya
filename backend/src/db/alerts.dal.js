@@ -11,7 +11,7 @@ export const createAlert = async (alert) => {
 
 export const getAlertById = async (id) => {
 	const result = await collection.findOne({ _id: new ObjectId(id) });
-    
+
 	if (!result) throw new AppError("Error! Alert not found!", 404);
 
 	return result;
@@ -21,4 +21,8 @@ export const getAllAlerts = () => {
 	const result = collection.find();
 
 	return result.toArray();
+};
+
+export const deleteAlertById = (id) => {
+	collection.deleteOne({ _id: new ObjectId(id) });
 };
