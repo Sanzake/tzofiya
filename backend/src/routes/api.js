@@ -4,17 +4,18 @@ import { deleteAlert } from "../controllers/deleteAlert.ctrl.js";
 import { getAlerts } from "../controllers/getAlerts.ctrl.js";
 import { getSingleAlert } from "../controllers/getSingleAlert.ctrl.js";
 import { updateAlert } from "../controllers/updateAlert.ctrl.js";
+import { asyncWrapper } from "../utils/asyncWrapper.js";
 
 const router = Router();
 
-router.get("/alerts", getAlerts);
+router.get("/alerts", asyncWrapper(getAlerts));
 
-router.get("/alerts/:id", getSingleAlert);
+router.get("/alerts/:id", asyncWrapper(getSingleAlert));
 
-router.post("/alerts", addAlert);
+router.post("/alerts", asyncWrapper(addAlert));
 
-router.delete("/alerts/:id", deleteAlert);
+router.delete("/alerts/:id", asyncWrapper(deleteAlert));
 
-router.put("/alerts/:id", updateAlert);
+router.put("/alerts/:id", asyncWrapper(updateAlert));
 
 export default router;
