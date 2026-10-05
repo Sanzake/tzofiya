@@ -5,5 +5,5 @@ export const addAlert = async (req, res) => {
 
 	const result = await createAlert(body);
 
-	res.status(201).json(result);
+	res.status(201).json({success: true, message: result});
 };
