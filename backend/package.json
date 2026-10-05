@@ -1,0 +1,11 @@
+{
+  "scripts": {"dev": "node --watch app.js"},
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^18.0.5",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0",
+    "mogodb": "^0.0.1-security",
+    "zod": "^4.6.5"
+  }
+}
