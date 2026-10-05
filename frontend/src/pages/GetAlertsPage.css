@@ -1,0 +1,19 @@
+.alertsPage {
+    display: flex;
+}
+
+.alertCard {
+    flex-direction: column;
+    text-align: center;
+    border: solid 2px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.alertsHolder {
+    width: 20%;
+}
+
+.map {
+    width: 75%;
+}
