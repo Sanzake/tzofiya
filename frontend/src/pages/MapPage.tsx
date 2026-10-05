@@ -4,12 +4,15 @@ import useFetchDelete from '../hooks/useFetchDelete'
 import useFetchGet from '../hooks/useFetchGet'
 import type { Alert } from '../types/alertType'
 import "./MapPage.css"
+import { useNavigate } from 'react-router'
 
 const url = "http://localhost:3001/api/alerts"
 
 export default function MapPage() {
     const {executeGet, data, error, loading} = useFetchGet<[] | null>(url)
     const {execute} = useFetchDelete(url)
+
+    const navigate = useNavigate()
 
     const handleDelete = (id: string) => {
         execute(id)
@@ -33,7 +36,8 @@ export default function MapPage() {
                         <p>Arena - {i.arena}</p> 
                         <p>Priority - {i.priority}</p>
                         <p>Status - {i.status}</p>
-                        <button type='button' onClick={() => handleDelete(i._id)}>delete</button>
+                        <button type='button' onClick={() => handleDelete(i._id)}>Delete</button>
+                        <button type='button' onClick={() => navigate(`/updateAlert/${i._id}`)}>Update</button>
                     </div>
                 ))}
             </div>
