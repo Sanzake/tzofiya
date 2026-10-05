@@ -10,9 +10,6 @@ type AlertProps = {
 }
 
 export default function AlertCard({alert}: AlertProps) {
-
-    console.log(alert)
-
     const navigate = useNavigate()
 	const { execute } = useFetchDelete(url);
 
@@ -23,8 +20,7 @@ export default function AlertCard({alert}: AlertProps) {
 
 	return (
 		<div className="bigAlertCard">
-			<p>{alert.arena}</p>
-			<p>Display name - {alert.displayName}</p>
+			<p>Name - {alert.displayName}</p>
 			<p>Description - {alert.description}</p>
 			<p>Arena - {alert.arena}</p>
 			<p>Priority - {alert.priority}</p>
@@ -33,7 +29,7 @@ export default function AlertCard({alert}: AlertProps) {
 			<button type="button" onClick={() => handleDelete(alert._id)}>
 				Delete
 			</button>
-			<button type="button" onClick={() => navigate(`/updateAlert/${alert._id}`)}>
+			<button type="button" onClick={() => navigate(`/updateAlert/${alert._id}`)} className="lastRow">
 				Update
 			</button>
 		</div>

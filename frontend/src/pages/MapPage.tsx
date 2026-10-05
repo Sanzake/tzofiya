@@ -24,11 +24,11 @@ export default function MapPage() {
             <div className='alertsHolder'>
                 {data?.map((i: Alert) => (
                     <div key={i._id} className='alertCard'>
-                        <p>Display name - {i.displayName}</p>
+                        <p>Name - {i.displayName}</p>
                         <p>Arena - {i.arena}</p> 
                         <p>Priority - {i.priority}</p>
                         <p>Status - {i.status}</p>
-                        <button type='button' onClick={() => navigate(`/alerts/${i._id}`)}>More</button>
+                        <button type='button' onClick={() => navigate(`/alerts/${i._id}`)} className='lastRow'>More</button>
                     </div>
                 ))}
             </div>

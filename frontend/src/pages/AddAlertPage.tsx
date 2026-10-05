@@ -57,7 +57,7 @@ export default function AddAlertPage() {
 				<input type="text" placeholder="latitude" name="lat" required/>
                 {error && <div style={{ color: "red", margin: "10px 0" }}>{error}</div>}
 
-                <button type="submit">{loading ? "Sending..." : "Send"}</button>
+                <button type="submit" className="lastRow">{loading ? "Sending..." : "Send"}</button>
 			</form>
             {data && <div>Successfull added!</div>}
 

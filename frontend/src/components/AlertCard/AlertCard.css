@@ -4,4 +4,9 @@
     border: solid 3px;
     border-radius: 10px;
     align-items: center;
+    gap: 10px;
+}
+
+.lastRow {
+    margin-bottom: 10px;
 }
