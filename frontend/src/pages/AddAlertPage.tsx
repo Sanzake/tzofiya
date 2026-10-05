@@ -1,0 +1,60 @@
+import type React from "react";
+import useFetchPost from "../hooks/useFetchPost";
+
+const url = "http://localhost:3001/api/alerts";
+
+export default function AddAlertPage() {
+	const { execute, data, error, loading } = useFetchPost(url);
+
+	const handleSubmit = async (e: React.SubmitEvent) => {
+        e.preventDefault()
+        const formData = new FormData(e.target)
+
+        const alertBody = {
+            displayName: formData.get("displayName"),
+            description: formData.get("description"),
+            priority: formData.get("priority"),
+            arena: formData.get("arena"),
+            status: formData.get("status"),
+            lon: Number(formData.get("lon")),
+            lat: Number(formData.get("lat"))
+        }
+        
+        await execute(alertBody)
+    };
+
+	return (
+		<div>
+			<h1>Add alert</h1>
+
+			<form onSubmit={handleSubmit}>
+				<input type="text" placeholder="displayName" name="displayName" required/>
+				<input type="text" placeholder="description" name="description" required/>
+
+				<select name="priority" id="" required>
+					<option value="Low">Low</option>
+					<option value="Medium">Medium</option>
+					<option value="High">High</option>
+					<option value="Critical">Critical</option>
+				</select>
+				<select name="arena" id="" required>
+					<option value="Center">Center</option>
+					<option value="North">North</option>
+					<option value="South">South</option>
+				</select>
+				<select name="status" id="" required>
+					<option value="Active">Active</option>
+					<option value="Handled">Handled</option>
+				</select>
+
+				<input type="text" placeholder="longitude" name="lon" required/>
+				<input type="text" placeholder="latitude" name="lat" required/>
+                {error && <div style={{ color: "red", margin: "10px 0" }}>{error}</div>}
+
+                <button type="submit">{loading ? "Sending..." : "Send"}</button>
+			</form>
+            {data && <div>Successfull added!</div>}
+
+		</div>
+	);
+}
