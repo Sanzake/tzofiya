@@ -1,5 +1,6 @@
 import type React from "react";
 import useFetchPost from "../hooks/useFetchPost";
+import "./AddAlertPage.css"
 
 const url = "http://localhost:3001/api/alerts";
 
@@ -24,25 +25,30 @@ export default function AddAlertPage() {
     };
 
 	return (
-		<div>
+		<div className="addAlertCard">
 			<h1>Add alert</h1>
 
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={handleSubmit} className="addAlertForm">
 				<input type="text" placeholder="displayName" name="displayName" required/>
 				<input type="text" placeholder="description" name="description" required/>
 
-				<select name="priority" id="" required>
+				<label htmlFor="priority">Priority</label>
+				<select name="priority" id="priority" required>
 					<option value="Low">Low</option>
 					<option value="Medium">Medium</option>
 					<option value="High">High</option>
 					<option value="Critical">Critical</option>
 				</select>
-				<select name="arena" id="" required>
+
+				<label htmlFor="arena">Arena</label>
+				<select name="arena" id="arena" required>
 					<option value="Center">Center</option>
 					<option value="North">North</option>
 					<option value="South">South</option>
 				</select>
-				<select name="status" id="" required>
+
+				<label htmlFor="status">Status</label>
+				<select name="status" id="status" required>
 					<option value="Active">Active</option>
 					<option value="Handled">Handled</option>
 				</select>
