@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import AlertsMap from '../components/AlertsMap/AlertsMap'
-import useFetchDelete from '../hooks/useFetchDelete'
 import useFetchGet from '../hooks/useFetchGet'
 import type { Alert } from '../types/alertType'
 import "./MapPage.css"
@@ -10,14 +9,8 @@ const url = "http://localhost:3001/api/alerts"
 
 export default function MapPage() {
     const {executeGet, data, error, loading} = useFetchGet<[] | null>(url)
-    const {execute} = useFetchDelete(url)
 
     const navigate = useNavigate()
-
-    const handleDelete = (id: string) => {
-        execute(id)
-        executeGet()
-    }
 
     useEffect(executeGet)
 
@@ -32,12 +25,10 @@ export default function MapPage() {
                 {data?.map((i: Alert) => (
                     <div key={i._id} className='alertCard'>
                         <p>Display name - {i.displayName}</p>
-                        <p>Description - {i.description}</p> 
                         <p>Arena - {i.arena}</p> 
                         <p>Priority - {i.priority}</p>
                         <p>Status - {i.status}</p>
-                        <button type='button' onClick={() => handleDelete(i._id)}>Delete</button>
-                        <button type='button' onClick={() => navigate(`/updateAlert/${i._id}`)}>Update</button>
+                        <button type='button' onClick={() => navigate(`/alerts/${i._id}`)}>More</button>
                     </div>
                 ))}
             </div>
