@@ -1,3 +1,5 @@
+import { compareToken } from "../utils/token.js";
+
 export const authenticate = (allowedRoles) => {
     return (req, _res, next) => {
         // לא הפרדתי את הבדיקה האם תוקן קיים למידלוויר אחר כי בכל מקרה לא אוכל להעביר את התוקן למידלוויר שבודק הרשאות
