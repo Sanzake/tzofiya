@@ -19,7 +19,7 @@ deleteAlert.ctrl - 204 - successfull deleted
 
 updateAlert.ctrl - 201 - successfull updated
 
-userRegister.ctrl - 201 / 409 - created / email conflict
+userRegister.ctrl - 201 / 401/ 403 / 409 - created / Invalid token / Permission denied / email conflict
 
 alerts.dal / users.dal - 404 - Not found
 
@@ -48,6 +48,7 @@ email - email
 role - ["admin", "general_user", "arena_user"]
 
 assignedArena - ["all", "North", "Central", "South"]
+
 
 Login validation:
 
