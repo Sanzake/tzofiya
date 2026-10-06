@@ -1,0 +1,8 @@
+.login-page {
+    display: flex;
+    flex-direction: column;
+    border: solid 3px;
+    border-radius: 20px;
+    align-items: center;
+    gap: 10px;
+}

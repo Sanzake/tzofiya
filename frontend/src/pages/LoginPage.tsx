@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router";
 import useFetchPost from "../hooks/useFetchPost";
+import "./LoginPage.css"
 
 const url = "http://localhost:3001/api/auth/login";
 
@@ -27,12 +28,12 @@ export default function LoginPage() {
         return res
     }
 	return (
-		<div>
+		<div className="login-page">
 			<h1>Login</h1>
             <input type="username" placeholder="username" ref={usernameRef}/>
             <input type="password" placeholder="password" ref={passwordRef}/>
             {error && <div style={{color: "red", margin: "10px 0"}}>{error}</div>}
-            <button type="button" onClick={handleClick}>
+            <button type="button" onClick={handleClick} className="lastRow">
                 {loading ? "Sending..." : "Send"}
             </button>
 		</div>
