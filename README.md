@@ -4,12 +4,12 @@
 
 ### DB
 בחרתי במונגו כי אין צורך בקשר בין טבלאות וגם היא ניתנת להרחבה בקלות
-וגם הצוות יודע לעבוד איתה איתור טוב
+וגם הצוות יודע לעבוד איתה יותר טוב
 
 ### Status Code
 addAlert - 201 - add alert to db
 
-getAlerts / getSingleAlert - 200 - get data from db
+getAlerts / getSingleAlert / usersGet.ctrl - 200 - get data from db
 
 errorHandler - 500 - uncaught server error
 
@@ -17,13 +17,11 @@ deleteAlert.ctrl / deleteUser.ctrl - 204 - successfull deleted
 
 updateAlert.ctrl - 201 - successfull updated
 
-userRegister.ctrl - 201 / 401/ 403 / 409 - created / Invalid token / Permission denied / email conflict
+userRegister.ctrl - 201 / 409 - created / email conflict
 
 alerts.dal / users.dal / getAlertById- 404 - Not found
 
 userLogin.ctrl - 200 / 409 - succesfull login / Invalid username or password
-
-usersGet.ctrl - 401 / 403 / 200 - invalid token / permission denied / successfull getted
 
 meGet.ctrl - 200 / 401
 
