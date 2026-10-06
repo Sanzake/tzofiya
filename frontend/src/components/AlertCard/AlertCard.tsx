@@ -26,9 +26,6 @@ export default function AlertCard({alert}: AlertProps) {
 		execute(id);
 		navigate("/alerts");
 	};
-			console.log(acceptedRoles.includes(role));
-			console.log(arena === "all");
-			console.log(alert.arena === arena);
 			
 	return (
 		<div className="bigAlertCard">
