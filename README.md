@@ -25,14 +25,35 @@ alerts.dal / users.dal - 404 - Not found
 
 userLogin.ctrl - 200 / 409 - succesfull login / Invalid username or password
 
+usersGet.ctrl - 401 / 403 / 200 - invalid token / permission denied / successfull getted
+
 ### Validation
-Alert validation 
+Alert validation :
 
 displayName / description - string minimum 4 chars - incorrect ...
 
 priority / arena / status - enum with valid strings
 
 lat / lon - number
+
+
+Register validation:
+
+username - string 4 - 20 chars
+
+password - string min 8 chars
+
+email - email
+
+role - ["admin", "general_user", "arena_user"]
+
+assignedArena - ["all", "North", "Central", "South"]
+
+Login validation:
+
+username - string 4 - 20 chars
+
+password - string min 8 chars
 
 ### Run 
 Run mongo db localy (in cli or docker)
