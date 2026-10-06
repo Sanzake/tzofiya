@@ -17,7 +17,7 @@ router.post("/login", validate(loginBodySchema), asyncWrapper(userLogin));
 
 router.get("/users", asyncWrapper(usersGet));
 
-router.delete("/users", asyncWrapper(userDelete));
+router.delete("/users/:id", asyncWrapper(userDelete));
 
 router.get("/me", asyncWrapper(meGet));
 

@@ -40,3 +40,11 @@ export const getUsers = async () => {
         
     return await users.toArray()
 }
+
+export const deleteUserById = async () => {
+    const result = await collection.deleteOne({ _id: new ObjectId(id) });
+        
+    if (result.deletedCount === 0) throw new AppError("User not found!", 404)
+    
+    return result
+}
