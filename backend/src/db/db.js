@@ -1,8 +1,7 @@
 import { MongoClient } from "mongodb";
+import "dotenv/config"
 
-const URI = "mongodb://localhost:27017"
-
-const client = new MongoClient(URI)
+const client = new MongoClient(process.env.URI)
 
 export const db = client.db("tzofia")
 
