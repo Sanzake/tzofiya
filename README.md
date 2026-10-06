@@ -21,8 +21,19 @@ priority / arena / status - enum with valid strings
 lat / lon - number
 
 ### Run 
+Run mongo db localy (in cli or docker)
+
 ```
-cd backend
+cd tzofiya/backend
+npm init
+npm run dev
+```
+
+
+## Frontent
+### Run
+```
+cd tzofiya/frontend
 npm init
 npm run dev
 ```
