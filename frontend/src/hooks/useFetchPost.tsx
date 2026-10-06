@@ -5,16 +5,17 @@ export default function useFetchPost(url: string) {
     const [error, setError] = useState<string | null>(null)
     const [loading, setLoading] = useState(false)
 
-    const execute = async (body: object) => {
+    const execute = async (body: object,  headers?: Record<string, string>) => {
         const fetchParams = {
             method: "post",
-            headers: {"Content-Type": "application/json"},
+            headers: {"Content-Type": "application/json", ...headers},
             body: JSON.stringify(body)
         }
 
         setError(null)
         setLoading(true)
-
+        console.log(fetchParams);
+        
         try {
             const res = await fetch(url, fetchParams)
             const result = await res.json()
