@@ -2,16 +2,17 @@ import { AppError } from "../utils/errorHandler.js";
 
 import { compareToken } from "../utils/token.js";
 export const authAdminMiddleware = (req, _res, next) => {
-    const authHeader = req.headers.authorization;
-    if (!authHeader?.startsWith("Bearer ")) {
-        throw new AppError("Invalid token!", 401);
-    }
+	// לא הפרדתי את הבדיקה האם תוקן קיים למידלוויר אחר כי בכל מקרה לא אוכל להעביר את התוקן למידלוויר שבודק הרשאות
+	const authHeader = req.headers.authorization;
+	if (!authHeader?.startsWith("Bearer ")) {
+		throw new AppError("Invalid token!", 401);
+	}
 
-    const token = authHeader.split(" ")[1];
+	const token = authHeader.split(" ")[1];
 
-    const { role } = compareToken(token);
+	const { role } = compareToken(token);
 
-    if (role !== "admin") throw new AppError("Permission denied!", 403);
+	if (role !== "admin") throw new AppError("Permission denied!", 403);
 
-    next()
-}
+	next();
+};
