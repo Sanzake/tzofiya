@@ -7,25 +7,25 @@
 וגם הצוות יודע לעבוד איתה איתור טוב
 
 ### Status Code
-getAlertById - 404 - alert not found
-
 addAlert - 201 - add alert to db
 
 getAlerts / getSingleAlert - 200 - get data from db
 
 errorHandler - 500 - uncaught server error
 
-deleteAlert.ctrl - 204 - successfull deleted
+deleteAlert.ctrl / deleteUser.ctrl - 204 - successfull deleted
 
 updateAlert.ctrl - 201 - successfull updated
 
 userRegister.ctrl - 201 / 401/ 403 / 409 - created / Invalid token / Permission denied / email conflict
 
-alerts.dal / users.dal - 404 - Not found
+alerts.dal / users.dal / getAlertById- 404 - Not found
 
 userLogin.ctrl - 200 / 409 - succesfull login / Invalid username or password
 
 usersGet.ctrl - 401 / 403 / 200 - invalid token / permission denied / successfull getted
+
+meGet.ctrl - 200 / 401
 
 ### Validation
 Alert validation :
