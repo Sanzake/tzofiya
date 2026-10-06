@@ -1,4 +1,4 @@
-import { getAlertById } from "../db/alerts.dal.js";
+import { getAlertById } from "../../db/alerts.dal.js";
 
 export const getSingleAlert = async (req, res) => {
 	const id = req.params.id;

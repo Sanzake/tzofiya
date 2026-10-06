@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { meGet } from "../controllers/meGet.ctrl.js";
-import { userDelete } from "../controllers/userDelete.ctrl.js";
-import { userLogin } from "../controllers/userLogin.ctrl.js";
-import { userRegister } from "../controllers/userRegister.ctrl.js.js";
-import { usersGet } from "../controllers/usersGet.ctrl.js";
+import { meGet } from "../controllers/auth.ctrl/meGet.ctrl.js";
+import { userDelete } from "../controllers/auth.ctrl/userDelete.ctrl.js";
+import { userLogin } from "../controllers/auth.ctrl/userLogin.ctrl.js";
+import { userRegister } from "../controllers/auth.ctrl/userRegister.ctrl.js.js";
+import { usersGet } from "../controllers/auth.ctrl/usersGet.ctrl.js";
 import { loginBodySchema } from "../schemas/loginSchema.js";
 import { userBodySchema } from "../schemas/userSchema.js";
 import { asyncWrapper } from "../utils/asyncWrapper.js";

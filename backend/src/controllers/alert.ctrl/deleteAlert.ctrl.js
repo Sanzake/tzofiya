@@ -1,4 +1,4 @@
-import { deleteAlertById } from "../db/alerts.dal.js";
+import { deleteAlertById } from "../../db/alerts.dal.js";
 
 export const deleteAlert = async (req, res) => {
 	const id = req.params.id;

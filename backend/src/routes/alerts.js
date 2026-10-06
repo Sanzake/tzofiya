@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { addAlert } from "../controllers/addAlert.ctrl.js";
-import { deleteAlert } from "../controllers/deleteAlert.ctrl.js";
-import { getAlerts } from "../controllers/getAlerts.ctrl.js";
-import { getSingleAlert } from "../controllers/getSingleAlert.ctrl.js";
-import { updateAlert } from "../controllers/updateAlert.ctrl.js";
+import { addAlert } from "../controllers/alert.ctrl/addAlert.ctrl.js";
+import { deleteAlert } from "../controllers/alert.ctrl/deleteAlert.ctrl.js";
+import { getAlerts } from "../controllers/alert.ctrl/getAlerts.ctrl.js";
+import { getSingleAlert } from "../controllers/alert.ctrl/getSingleAlert.ctrl.js";
+import { updateAlert } from "../controllers/alert.ctrl/updateAlert.ctrl.js";
 import { alertBodySchema } from "../schemas/alertSchema.js";
 import { asyncWrapper } from "../utils/asyncWrapper.js";
 import { validate } from "../utils/validation.js";
