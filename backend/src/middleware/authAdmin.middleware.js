@@ -1,7 +1,7 @@
 import { AppError } from "../utils/errorHandler.js";
 
 import { compareToken } from "../utils/token.js";
-export const authMiddleware = (req, _res, next) => {
+export const authAdminMiddleware = (req, _res, next) => {
     const authHeader = req.headers.authorization;
     if (!authHeader?.startsWith("Bearer ")) {
         throw new AppError("Invalid token!", 401);
