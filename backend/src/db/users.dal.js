@@ -4,11 +4,11 @@ import { db } from "./db.js";
 const collection = db.collection("users");
 
 export const createUser = async (userData) => {
-	const result = await collection.insertOne(userData);
-
+	await collection.insertOne(userData);
+    
 	delete userData.passwordHash;
-
-	return { id: result.insertedId, ...userData };
+    
+	return userData;
 };
 
 export const getUserByEmail = async (email) => {
