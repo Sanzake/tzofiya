@@ -4,15 +4,18 @@ import { userDelete } from "../controllers/userDelete.ctrl.js";
 import { userLogin } from "../controllers/userLogin.ctrl.js";
 import { userRegister } from "../controllers/userRegister.ctrl.js.js";
 import { usersGet } from "../controllers/usersGet.ctrl.js";
+import { loginBodySchema } from "../schemas/loginSchema.js";
+import { userBodySchema } from "../schemas/userSchema.js";
+import { validate } from "../utils/validation.js";
 
 const router = Router();
 
-router.post("/register", userRegister);
+router.post("/register", validate(userBodySchema), asyncWrapper(userRegister));
 
-router.post("/login", userLogin);
+router.post("/login", validate(loginBodySchema), asyncWrapper(userLogin));
 
-router.get("/users", usersGet);
+router.get("/users", asyncWrapper(usersGet));
 
-router.delete("/users", userDelete);
+router.delete("/users", asyncWrapper(userDelete));
 
-router.get("/me", meGet);
+router.get("/me", asyncWrapper(meGet));
