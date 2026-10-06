@@ -33,6 +33,9 @@ export default function AdminPage() {
 
 	};
 
+    if (error) return <>{error}</>
+    if (loading) return <>Loading...</>
+
 	return (
 		<div>
 			<h1>AdminPage</h1>
