@@ -19,6 +19,12 @@ deleteAlert.ctrl - 204 - successfull deleted
 
 updateAlert.ctrl - 201 - successfull updated
 
+userRegister.ctrl - 201 / 409 - created / email conflict
+
+alerts.dal / users.dal - 404 - Not found
+
+userLogin.ctrl - 200 / 409 - succesfull login / Invalid username or password
+
 ### Validation
 Alert validation 
 
@@ -30,6 +36,7 @@ lat / lon - number
 
 ### Run 
 Run mongo db localy (in cli or docker)
+Create .env and fill it from .env.example
 
 ```
 cd tzofiya/backend
