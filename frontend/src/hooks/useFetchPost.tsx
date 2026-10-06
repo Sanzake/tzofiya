@@ -14,7 +14,6 @@ export default function useFetchPost(url: string) {
 
         setError(null)
         setLoading(true)
-        console.log(fetchParams);
         
         try {
             const res = await fetch(url, fetchParams)

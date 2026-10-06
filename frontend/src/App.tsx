@@ -26,10 +26,6 @@ function App() {
 				<Route path="/auth/register" element={<RegisterPage />} />
 
 				<Route path="*" element={<h1>404 - Page Not Found</h1>} />
-
-				{/* />
-        <Route path='/searchAlerts' element={}/>
-        <Route path='/filterAlerts' element={}/> */}
 			</Route>
 		</Routes>
 	);
