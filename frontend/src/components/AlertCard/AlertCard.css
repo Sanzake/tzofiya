@@ -10,3 +10,9 @@
 .lastRow {
     margin-bottom: 10px;
 }
+
+.buttons-holder {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 10px;
+}

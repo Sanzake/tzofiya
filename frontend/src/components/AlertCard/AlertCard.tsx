@@ -29,18 +29,18 @@ export default function AlertCard({alert}: AlertProps) {
 			
 	return (
 		<div className="bigAlertCard">
-			<p>Name - {alert.displayName}</p>
+			<p>Alert name - {alert.displayName}</p>
 			<p>Description - {alert.description}</p>
 			<p>Arena - {alert.arena}</p>
 			<p>Priority - {alert.priority}</p>
 			<p>Status - {alert.status}</p>
 
 			{(acceptedRoles.includes(role) || arena === "all"  || alert.arena === arena) &&
-				<div>
+				<div className="buttons-holder">
 					<button type="button" onClick={() => handleDelete(alert._id)}>
 						Delete
 					</button>
-					<button type="button" onClick={() => navigate(`/updateAlert/${alert._id}`)} className="lastRow">
+					<button type="button" onClick={() => navigate(`/updateAlert/${alert._id}`)}>
 						Update
 					</button>
 				</div>
