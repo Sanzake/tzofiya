@@ -10,14 +10,14 @@ import { validate } from "../utils/validation.js";
 
 const router = Router();
 
-router.get("/alerts", asyncWrapper(getAlerts));
+router.get("/", asyncWrapper(getAlerts));
 
-router.get("/alerts/:id", asyncWrapper(getSingleAlert));
+router.get("/:id", asyncWrapper(getSingleAlert));
 
-router.post("/alerts", validate(alertBodySchema), asyncWrapper(addAlert));
+router.post("/", validate(alertBodySchema), asyncWrapper(addAlert));
 
-router.delete("/alerts/:id", asyncWrapper(deleteAlert));
+router.delete("/:id", asyncWrapper(deleteAlert));
 
-router.put("/alerts/:id",  asyncWrapper(updateAlert));
+router.put("/:id",  asyncWrapper(updateAlert));
 
 export default router;
