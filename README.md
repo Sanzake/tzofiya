@@ -45,7 +45,7 @@ email - email
 
 role - ["admin", "general_user", "arena_user"]
 
-assignedArena - ["all", "North", "Central", "South"]
+assignedArena - ["all", "North", "Center", "South"]
 
 
 Login validation:

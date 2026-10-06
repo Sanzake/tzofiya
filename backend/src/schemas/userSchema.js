@@ -6,6 +6,6 @@ export const userBodySchema = z.object({
         password: z.string().min(8, "Password too short!"),
         email: z.email("Incorrect email!"),
         role: z.enum(["admin", "general_user", "arena_user"]),
-        assignedArena: z.enum(["all", "North", "Central", "South"])
+        assignedArena: z.enum(["all", "North", "Center", "South"])
     })
 })

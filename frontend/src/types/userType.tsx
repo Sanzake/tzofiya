@@ -5,6 +5,6 @@ export type User = {
         username: string,
         email: string,
         role: string,
-        assignedArea: string
+        assignedArena: string
     }
 }

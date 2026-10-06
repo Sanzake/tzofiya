@@ -11,7 +11,7 @@ type getUsersResponseType = {
 		username: string;
 		email: string;
 		role: string;
-		assignedArea: string;
+		assignedArena: string;
 	}[];
 };
 
