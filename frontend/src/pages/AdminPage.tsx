@@ -21,14 +21,14 @@ export default function AdminPage() {
 	const { executeGet, data, error, loading } = useFetchGet<getUsersResponseType>(url, {
 		Authorization: `Bearer ${token}`,
 	});
-	const executeDelete = useFetchDelete(url).execute;
+	const {execute} = useFetchDelete(url);
 
 	if (!data) return <>No data!</>;
 
 	const users = data.message;
 
 	const deleteHandler = (id: string) => {
-		executeDelete(id, { Authorization: `Bearer ${token}` });
+		execute(id, { Authorization: `Bearer ${token}` });
         executeGet()
 
 	};
