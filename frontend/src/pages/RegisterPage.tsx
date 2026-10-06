@@ -69,7 +69,7 @@ export default function RegisterPage() {
 
 				<label htmlFor="assignedArena">Assigned arena</label>
 				<select name="assignedArena" id="assignedArena" required>
-					<option value="Central">Central</option>
+					<option value="Center">Center</option>
 					<option value="North">North</option>
 					<option value="South">South</option>
 					<option value="all">All</option>
