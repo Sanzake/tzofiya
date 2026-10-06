@@ -1,7 +1,8 @@
 import type React from "react";
-import "./AddAlertPage.css";
+import "./UpdateAlertPage.css";
 import { useParams } from "react-router";
 import useFetchPut from "../hooks/useFetchPut";
+
 
 const url = "http://localhost:3001/api/alerts";
 
@@ -29,7 +30,7 @@ export default function AddAlertPage() {
 	};
 
 	return (
-		<div className="addAlertCard">
+		<div className="update-alert-page">
 			<h1>Update alert</h1>
 
 			<form onSubmit={handleSubmit} className="addAlertForm">
@@ -71,7 +72,7 @@ export default function AddAlertPage() {
 				<input type="text" placeholder="latitude" name="lat" required />
 				{error && <div style={{ color: "red", margin: "10px 0" }}>{error}</div>}
 
-				<button type="submit">{loading ? "Sending..." : "Send"}</button>
+				<button type="submit" className="lastRow">{loading ? "Sending..." : "Send"}</button>
 			</form>
 			{data && <div>Successfull updated!</div>}
 		</div>
