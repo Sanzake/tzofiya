@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import useFetchGet from "../hooks/useFetchGet"
+import "./MePage.css"
 
 const url = "http://localhost:3001/api/auth/me";
 
@@ -29,11 +30,11 @@ export default function MePage() {
     const user = data.message
     
     return (
-        <div>
+        <div className="me-page">
             <h1>My Account</h1>
             <div>Username - {user.username}</div>
             <div>Email - {user.email}</div>
-            <div>Role - {user.role}</div>
+            <div className="lastRow">Role - {user.role}</div>
         </div>
     )
 }
