@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import useFetchGet from "../hooks/useFetchGet.tsx";
 import useFetchPost from "../hooks/useFetchPost.tsx";
 import type { User } from "../types/userType.tsx";
+import "./RegisterPage.css"
 
 const url = "http://localhost:3001";
 
@@ -38,9 +39,9 @@ export default function RegisterPage() {
     };
 
 	return (
-		<div>
+		<div className="register-page">
 			<h1>Sign Up</h1>
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={handleSubmit} className="user-form">
 				<input
 					type="text"
 					placeholder="username"
@@ -77,7 +78,7 @@ export default function RegisterPage() {
 
 				{error && <div style={{ color: "red", margin: "10px 0" }}>{error}</div>}
 
-				<button type="submit">
+				<button type="submit" className="lastRow">
 					{loading ? "Sending..." : "Send"}
 				</button>
 			</form>
