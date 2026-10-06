@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router";
 import useFetchDelete from "../hooks/useFetchDelete";
 import useFetchGet from "../hooks/useFetchGet";
+import "./AdminPage.css"
 
 const url = "http://localhost:3001/api/auth/users";
 
@@ -37,7 +38,7 @@ export default function AdminPage() {
     if (loading) return <>Loading...</>
 
 	return (
-		<div>
+		<div className="admin-page">
 			<h1>AdminPage</h1>
 			<button type="button" onClick={() => navigate("/auth/register")}>
 				Add user
@@ -45,8 +46,8 @@ export default function AdminPage() {
 			{users.map((user) => (
 				<div key={user._id}>
 					{user.username} - {user.email} - {user.role}
-					<button type="button" onClick={() => deleteHandler(user._id)}>
-						Delete user
+					<button type="button" onClick={() => deleteHandler(user._id)} className="delete-button lastRow">
+						Delete
 					</button>
 				</div>
 			))}
