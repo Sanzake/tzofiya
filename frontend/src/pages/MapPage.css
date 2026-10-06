@@ -12,7 +12,7 @@
 }
 
 .alertsHolder {
-    height: 100ex;
+    height: 100vh;
     overflow: scroll;
     width: 20%;
 }
