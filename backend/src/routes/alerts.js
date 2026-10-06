@@ -4,6 +4,7 @@ import { deleteAlert } from "../controllers/alert.ctrl/deleteAlert.ctrl.js";
 import { getAlerts } from "../controllers/alert.ctrl/getAlerts.ctrl.js";
 import { getSingleAlert } from "../controllers/alert.ctrl/getSingleAlert.ctrl.js";
 import { updateAlert } from "../controllers/alert.ctrl/updateAlert.ctrl.js";
+import { authenticate } from "../middleware/authentication.middleware.js";
 import { alertBodySchema } from "../schemas/alertSchema.js";
 import { asyncWrapper } from "../utils/asyncWrapper.js";
 import { validate } from "../utils/validation.js";
@@ -18,6 +19,10 @@ router.post("/", validate(alertBodySchema), asyncWrapper(addAlert));
 
 router.delete("/:id", asyncWrapper(deleteAlert));
 
-router.put("/:id",  asyncWrapper(updateAlert));
+router.put(
+	"/:id",
+	authenticate(["admin", "general_user"]),
+	asyncWrapper(updateAlert),
+);
 
 export default router;
