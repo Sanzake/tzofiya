@@ -16,8 +16,11 @@ updateAlert.ctrl - 201 - successfull updated
 
 ### Validation
 Alert validation 
+
 displayName / description - string minimum 4 chars - incorrect ...
+
 priority / arena / status - enum with valid strings
+
 lat / lon - number
 
 ### Run 
