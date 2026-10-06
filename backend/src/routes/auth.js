@@ -6,6 +6,7 @@ import { userRegister } from "../controllers/userRegister.ctrl.js.js";
 import { usersGet } from "../controllers/usersGet.ctrl.js";
 import { loginBodySchema } from "../schemas/loginSchema.js";
 import { userBodySchema } from "../schemas/userSchema.js";
+import { asyncWrapper } from "../utils/asyncWrapper.js";
 import { validate } from "../utils/validation.js";
 
 const router = Router();
@@ -19,3 +20,5 @@ router.get("/users", asyncWrapper(usersGet));
 router.delete("/users", asyncWrapper(userDelete));
 
 router.get("/me", asyncWrapper(meGet));
+
+export default router;
