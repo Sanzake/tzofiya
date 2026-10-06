@@ -14,6 +14,8 @@ function App() {
 				<Route path="/alerts" element={<MapPage />} />
 				<Route path="/alerts/:id" element={<AlertPage />} />
         <Route path="/updateAlert/:id" element={<UpdateAlertPage />}/>
+        <Route path="/" element={<MapPage />} />
+        <Route path="*" element={<h1>404 - Page Not Found</h1>} />
 
 				{/* />
         <Route path='/searchAlerts' element={}/>

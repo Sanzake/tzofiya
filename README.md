@@ -37,3 +37,6 @@ cd tzofiya/frontend
 npm init
 npm run dev
 ```
+
+####
+Browser URL - ```localhost:5173```
