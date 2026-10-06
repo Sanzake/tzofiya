@@ -4,6 +4,7 @@ import "./App.css";
 import Layout from "./components/Layout/Layout";
 import Protected from "./components/Protected/Protected";
 import AddAlertPage from "./pages/AddAlertPage";
+import AdminPage from "./pages/AdminPage";
 import AlertPage from "./pages/AlertPage";
 import LoginPage from "./pages/LoginPage";
 import MapPage from "./pages/MapPage";
@@ -32,6 +33,8 @@ function App() {
 
 				<Route path="/me" element={<Protected><MePage /></Protected>} />
 				<Route path="/auth/register" element={<Protected><RegisterPage /></Protected>} />
+
+				<Route path="/admin/users" element={<Protected><AdminPage/></Protected>} />
 
 				<Route path="*" element={<h1>404 - Page Not Found</h1>} />
 			</Route>

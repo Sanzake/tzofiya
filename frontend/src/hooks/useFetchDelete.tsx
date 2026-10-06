@@ -1,12 +1,13 @@
 import { useState } from "react";
 
-export default function useFetchPost(url: string) {
+export default function useFetchDelete(url: string) {
     const [error, setError] = useState<string | null>(null)
     const [loading, setLoading] = useState(false)
 
-    const execute = async (id: string) => {
+    const execute = async (id: string, headers?: Record<string, string>) => {
         const fetchParams = {
-            method: "delete"
+            method: "delete",
+            headers: headers
         }
 
         setError(null)
